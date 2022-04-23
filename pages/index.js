@@ -1,5 +1,12 @@
+import Head from ".components/Head";
+
 function Home() {
-  return <div>Home</div>;
+  return (
+    <>
+      <Head />
+      <Footer />
+    </>
+  );
 }
 
 export default Home;
