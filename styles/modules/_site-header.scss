@@ -1,0 +1,174 @@
+@use "../base/vars";
+@import "../base/mixins";
+
+.site-header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 7.5rem;
+  z-index: 2;
+  background-color: white;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    margin-top: 1.3rem;
+
+    @include atTiny {
+      margin-top: 1.2rem;
+    }
+
+    @include atMedium {
+      margin-top: 0.625rem;
+    }
+
+    @include atLarge {
+      margin-top: 0.25rem;
+    }
+
+    @include atLargest {
+      margin-top: 0;
+    }
+  }
+
+  &__logo span {
+    height: 5.375rem !important;
+    width: 8.25rem !important;
+
+    @include atMedium {
+      height: 6.1875rem !important;
+      width: 9.5rem !important;
+    }
+
+    @include atLarge {
+      height: 7rem !important;
+      width: 10.75rem !important;
+    }
+
+    @include atLargest {
+      height: 7.4375rem !important;
+      width: 11.375rem !important;
+    }
+  }
+
+  &__nav {
+    margin: 0;
+    padding-top: 3.125rem;
+    padding-right: 0;
+    display: none;
+
+    @include atTiny {
+      display: block;
+    }
+
+    @include atLargest {
+      padding-right: 3.125rem;
+    }
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+
+    a {
+      color: vars.$secBlue;
+      font-family: vars.$inter;
+      font-size: 1rem;
+      text-decoration: none;
+      padding: 0 0.4rem;
+
+      @include atSmaller {
+        padding: 0 0.5rem;
+      }
+
+      @include atSmall {
+        padding: 0 1rem;
+      }
+
+      @include atMedium {
+        font-size: 1.1rem;
+        padding: 0 1.5rem;
+      }
+
+      @include atLarge {
+        font-size: 1.3rem;
+        padding: 0 1.8rem;
+      }
+
+      @include atLargest {
+        font-size: 1.6rem;
+        padding: 0 2rem;
+      }
+    }
+  }
+
+  &__menu-icon {
+    width: 20px;
+    height: 19px;
+    position: absolute;
+    z-index: 2;
+    top: 50px;
+    right: 50px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: 0;
+      width: 35px;
+      height: 4px;
+      background-color: vars.$secBlue;
+      transform-origin: 0 0;
+      transition: transform 0.3s ease-out;
+    }
+
+    &__middle {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 35px;
+      height: 4px;
+      background-color: vars.$secBlue;
+      transform-origin: 0 50%;
+      transition: all 0.3s ease-out;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 35px;
+      height: 4px;
+      background-color: vars.$secBlue;
+      transform-origin: 12% 114%;
+    }
+
+    @include atTiny {
+      display: none;
+    }
+  }
+
+  &__menu-icon--close-x {
+    margin-left: 10px;
+
+    &::before {
+      transform: rotate(45deg) scaleX(1.25);
+      width: 37px;
+    }
+
+    .site-header__menu-icon__middle {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    &::after {
+      transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+      width: 37px;
+    }
+  }
+}

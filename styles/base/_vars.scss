@@ -1,4 +1,12 @@
-$white: rgba(255, 255, 255);
-$lighterBlue: rgba(153, 181, 195);
-$lightBlue: rgba(76, 126, 151);
-$mainBlue: rgba(0, 72, 107);
+// Fonts
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap");
+
+$inter: "Inter", sans-serif;
+
+// Colors
+
+$lighterBlue: #99b5c3;
+$lightBlue: #4c7e97;
+$mainBlue: #00486b;
+$secBlue: #4167b0;
