@@ -1,0 +1,49 @@
+@use "../base/vars";
+@import "../base/mixins";
+
+.about-us {
+  font-family: vars.$inter;
+
+  &__title {
+    color: vars.$mainBlue;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  &__break {
+    height: 1px;
+    border: none;
+    max-width: 15rem;
+    background-color: vars.$mainBlue;
+
+    @include atTiny {
+      max-width: 23rem;
+    }
+
+    @include atSmall {
+      max-width: 30rem;
+    }
+
+    @include atMedium {
+      max-width: 35rem;
+    }
+
+    @include atLarge {
+      max-width: 40rem;
+    }
+
+    @include atLargest {
+      max-width: 45rem;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 5%;
+
+    @include atTiny {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

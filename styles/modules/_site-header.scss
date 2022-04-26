@@ -80,6 +80,8 @@
       font-size: 1rem;
       text-decoration: none;
       padding: 0 0.4rem;
+      border-bottom: 1px solid transparent;
+      transition: 0.9s;
 
       @include atSmaller {
         padding: 0 0.5rem;
@@ -104,6 +106,10 @@
         padding: 0 2rem;
       }
     }
+  }
+
+  li a:hover {
+    border-color: vars.$mainBlue;
   }
 
   &__menu-icon {

@@ -3,13 +3,15 @@ import serviceMan from "../../images/our-services.png";
 
 const Services = () => {
   return (
-    <div id="services">
-      <h2>Our Services:</h2>
-      <div className="services-section">
-        <div className="services-section__image">
+    <div id="services" className="services">
+      <div className="services__title">
+        <h2>Our Services:</h2>
+      </div>
+      <div className="services__container">
+        <div className="services__image">
           <Image src={serviceMan} alt="Servicing a boat" />
         </div>
-        <div className="services-section__services">
+        <div className="services__items">
           <ul>
             <li>Gel Coat Repairs</li>
             <li>Structural Grip Repairs</li>
