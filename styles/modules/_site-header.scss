@@ -146,6 +146,7 @@
       height: 4px;
       background-color: vars.$secBlue;
       transform-origin: 12% 114%;
+      transition: transform 0.3s ease-out;
     }
 
     @include atTiny {

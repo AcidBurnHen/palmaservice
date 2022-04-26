@@ -1,0 +1,50 @@
+@use "../base/vars";
+@import "../base/mixins";
+
+.banner {
+  display: grid;
+  margin-top: 119px;
+  grid-template-columns: 1fr;
+
+  &__image {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &__content {
+    z-index: 1;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: vars.$inter;
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: vars.$mainBlue;
+    text-shadow: 2px 2px 5px #a3a3a3;
+    margin-top: -1.4rem;
+    font-weight: 300;
+
+    @include atTiny {
+      font-size: 2rem;
+    }
+
+    @include atSmall {
+      margin-top: -1rem;
+      font-size: 2.5rem;
+    }
+
+    @include atMedium {
+      font-weight: 100;
+      font-size: 3rem;
+    }
+
+    @include atLarge {
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 5px #7c7c7c;
+    }
+  }
+}
