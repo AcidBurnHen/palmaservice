@@ -20,14 +20,14 @@ export const galleryData = [
   {
     src: "https://sionaugb.sirv.com/palmaservice/1%20Peter%20Pan%202005yr/4.jpg",
     alt: "Peter Pan 2005 - 04",
-    width: "480px",
-    height: "640px"
+    width: "640px",
+    height: "500px"
   },
   {
     src: "https://sionaugb.sirv.com/palmaservice/1%20Peter%20Pan%202005yr/7.jpg",
     alt: "Peter Pan 2005 - 07",
     width: "768px",
-    height: "1024px"
+    height: "600px"
   },
   {
     src: "https://sionaugb.sirv.com/palmaservice/1%20Peter%20Pan%202005yr/8.jpg",
@@ -63,7 +63,7 @@ export const galleryData = [
     src: "https://sionaugb.sirv.com/palmaservice/1%20Peter%20Pan%202005yr/13.jpg",
     alt: "Peter Pan 2005 - 13",
     width: "768px",
-    height: "1024px"
+    height: "600px"
   },
   {
     src: "https://sionaugb.sirv.com/palmaservice/1%20Peter%20Pan%202005yr/14.jpg",

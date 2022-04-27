@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { galleryData } from "./GalleryData";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+import { AiFillCamera } from "react-icons/ai";
 import Image from "next/image";
 
 const Gallery = () => {
@@ -17,8 +18,11 @@ const Gallery = () => {
 
   return (
     <div id="gallery" className="gallery-section wrapper">
-      <div className="gallery-section__title">
-        <h2>Gallery</h2>
+      <div className="gallery-section__title-container">
+        <AiFillCamera className="gallery-section__icon" />
+        <div className="gallery-section__title">
+          <h2>Gallery</h2>
+        </div>
       </div>
       <section className="gallery-section__slider">
         <FaArrowAltCircleLeft className="gallery-section__left-arrow" onClick={prevImg} />
@@ -26,7 +30,7 @@ const Gallery = () => {
         {galleryData.map((image, index) => {
           return (
             <div key={index} className={`gallery-section__slide ${index === current ? "gallery-section__slide--active" : ""}`}>
-              {index === current && <Image src={image.src} alt={image.alt} height={image.height} width={image.width} />}
+              {index === current && <Image src={image.src} alt={image.alt} height={image.height} width={image.width} objectFit="contain" />}
             </div>
           );
         })}

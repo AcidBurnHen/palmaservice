@@ -4,18 +4,29 @@
 .gallery-section {
   color: vars.$mainBlue;
 
+  &__title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
   &__title {
     font-family: vars.$inter;
     font-size: 1.25rem;
-    text-align: center;
 
     h2 {
       font-weight: 200;
     }
   }
 
+  &__icon {
+    margin: 1.1rem 0.8125rem 0 0;
+    height: 3rem;
+    width: 3rem;
+  }
+
   &__slider {
-    padding: 1rem 0 2rem 0;
+    padding: 1rem 0 3.5rem 0;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(3, 1fr);

@@ -1,8 +1,13 @@
+import { MdPeople } from "react-icons/md";
+
 const About = () => {
   return (
     <div id="about" className="about-us">
-      <div className="about-us__title">
-        <h2>About Us</h2>
+      <div className="about-us__title-container">
+        <MdPeople className="about-us__icon" />
+        <div className="about-us__title">
+          <h2>About Us</h2>
+        </div>
       </div>
       <hr className="about-us__break" />
       <div className="about-us__container wrapper">

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AiOutlineMail } from "react-icons/ai";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -42,9 +43,7 @@ const Contact = () => {
       },
       body: JSON.stringify(data)
     }).then(res => {
-      console.log("Response received");
       if (res.status === 200) {
-        console.log("Response succeeded!");
         setSubmitted(true);
         setName("");
         setEmail("");
@@ -55,28 +54,27 @@ const Contact = () => {
 
   return (
     <div id="contact" className="contact-us">
-      <div className="contact-us__title">
-        <h2>Contact Us Section</h2>
+      <div className="contact-us__title-container">
+        <AiOutlineMail className="contact-us__icon" />
+        <div className="contact-us__title">
+          <h2>Contact Us</h2>
+        </div>
       </div>
       <div className="contact-us__form-container wrapper">
         <form className="contact-us__form">
-          <div className="contact-us__section">
+          <div className="contact-us__labels">
             <label htmlFor="name">Name</label>
-            <input onChange={handleName} type="text" name="name" />
-          </div>
-          <div className="contact-us__section">
             <label htmlFor="email">Email</label>
-            <input onChange={handleEmail} type="email" name="email" />
-          </div>
-          <div className="contact-us__section">
             <label htmlFor="subject">Subject</label>
-            <input onChange={handleSubject} type="text" name="subject" />
-          </div>
-          <div className="contact-us__section">
             <label htmlFor="message">Message</label>
-            <input onChange={handleMessage} type="text" name="message" />
           </div>
-          <input onClick={handleSubmit} type="submit" />
+          <div className="contact-us__inputs">
+            <input onChange={handleName} type="text" name="name" />
+            <input onChange={handleEmail} type="email" name="email" />
+            <input onChange={handleSubject} type="text" name="subject" />
+            <input className="contact-us__inputs-message" onChange={handleMessage} type="text" name="message" />
+          </div>
+          <input className="contact-us__submit" onClick={handleSubmit} type="submit" />
         </form>
       </div>
     </div>
