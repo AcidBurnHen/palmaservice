@@ -1,13 +1,17 @@
 import Image from "next/image";
 import serviceMan from "../../images/our-services.png";
+import { MdDirectionsBoatFilled } from "react-icons/md";
 
 const Services = () => {
   return (
     <div id="services" className="services">
-      <div className="services__title">
-        <h2>Our Services:</h2>
+      <div className="services__title-section">
+        <MdDirectionsBoatFilled className="services__icon" />
+        <div className="services__title">
+          <h2>Our Services</h2>
+        </div>
       </div>
-      <div className="services__container">
+      <div className="services__container wrapper">
         <div className="services__image">
           <Image src={serviceMan} alt="Servicing a boat" />
         </div>

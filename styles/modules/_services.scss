@@ -1,0 +1,77 @@
+@use "../base/vars";
+@import "../base/mixins";
+
+.services {
+  background-color: vars.$bg;
+  font-family: vars.$inter;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 100;
+  padding: 1.25rem 0 1.25rem 0;
+
+  &__title-section {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 1.25rem;
+    grid-column: 2;
+
+    h2 {
+      font-weight: 200;
+    }
+  }
+
+  &__icon {
+    margin: 0.8125rem 0.8125rem 0 0;
+    height: 3.5625rem;
+    width: 3.5625rem;
+  }
+
+  &__container {
+    padding: 1.25rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include atTiny {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__items {
+    font-size: 1rem;
+
+    @include atMedium {
+      font-size: 1.1;
+    }
+
+    @include atLarge {
+      font-size: 1.3rem;
+    }
+
+    @include atLargest {
+      font-size: 1.5rem;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      padding: 1.25rem 0;
+    }
+  }
+
+  &__image {
+    justify-self: center;
+
+    @include atTiny {
+      margin-left: 1.25rem;
+    }
+
+    @include atLarge {
+      margin-left: 0;
+    }
+  }
+}

@@ -3,11 +3,16 @@
 
 .about-us {
   font-family: vars.$inter;
+  padding: 1.25rem 0 3.125rem 0;
 
   &__title {
     color: vars.$mainBlue;
     text-align: center;
     font-size: 1.25rem;
+
+    h2 {
+      font-weight: 200;
+    }
   }
 
   &__break {
@@ -44,6 +49,10 @@
 
     @include atTiny {
       grid-template-columns: repeat(3, 1fr);
+    }
+
+    span {
+      font-weight: 200;
     }
   }
 }
