@@ -1,0 +1,16 @@
+{
+  "/_app": "pages/_app.js",
+  "/components/About": "pages/components/About.js",
+  "/components/Banner": "pages/components/Banner.js",
+  "/components/Footer": "pages/components/Footer.js",
+  "/api/contact": "pages/api/contact.js",
+  "/components/GalleryData": "pages/components/GalleryData.js",
+  "/components/Header": "pages/components/Header.js",
+  "/components/Nav": "pages/components/Nav.js",
+  "/components/Services": "pages/components/Services.js",
+  "/": "pages/index.js",
+  "/_error": "pages/_error.js",
+  "/components/Contact": "pages/components/Contact.js",
+  "/components/Gallery": "pages/components/Gallery.js",
+  "/_document": "pages/_document.js"
+}
