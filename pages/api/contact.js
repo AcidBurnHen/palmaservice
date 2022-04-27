@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const PASS = process.env.password;
 
-export default function (req, res) {
+export default function emailHandler(req, res) {
   const transporter = nodemailer.createTransport({
     port: 465,
     host: "smtp.gmail.com",
