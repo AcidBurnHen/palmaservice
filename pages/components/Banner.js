@@ -1,11 +1,10 @@
 import Image from "next/image";
-import banner from "../../images/banner-large.png";
 
 const Banner = () => {
   return (
     <div className="banner">
       <div className="banner__image">
-        <Image src={banner} alt="maritime composites banner" />
+        <Image src="https://sionaugb.sirv.com/palmaservice/logo/banner-large.svg" width="1920px" height="654px" objectFit="contain" alt="maritime composites banner" />
       </div>
 
       <div className="banner__content">

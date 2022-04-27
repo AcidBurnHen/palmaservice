@@ -1,5 +1,4 @@
 import Image from "next/image";
-import serviceMan from "../../images/our-services.png";
 import { MdDirectionsBoatFilled } from "react-icons/md";
 
 const Services = () => {
@@ -13,14 +12,14 @@ const Services = () => {
       </div>
       <div className="services__container wrapper">
         <div className="services__image">
-          <Image src={serviceMan} alt="Servicing a boat" />
+          <Image src="https://sionaugb.sirv.com/palmaservice/logo/our-services.svg" width="350px" height="426px" alt="Servicing a boat" />
         </div>
         <div className="services__items">
           <ul>
             <li>Gel Coat Repairs</li>
             <li>Structural Grip Repairs</li>
             <li>Polishing and Refurbishing</li>
-            <li>Electircal Installations and Upgrades</li>
+            <li>Electrical Installations and Upgrades</li>
             <li>Upholstery Repairs and Upgrades</li>
             <li>Bow and Stern Thrusters</li>
           </ul>
