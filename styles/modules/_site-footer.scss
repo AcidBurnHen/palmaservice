@@ -1,0 +1,52 @@
+@use "../base/vars";
+@import "../base/mixins";
+
+.site-footer {
+  background-color: #01323d;
+  color: #fff;
+  font-family: vars.$inter;
+  padding: 0.6rem 0 0.6rem 0;
+  font-size: 0.9rem;
+
+  @include atTiny {
+    font-size: 0.7rem;
+  }
+
+  @include atSmall {
+    font-size: 0.8rem;
+  }
+
+  @include atLarge {
+    font-size: 1rem;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 1rem;
+
+    h3 {
+      font-weight: 200;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include atTiny {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    p {
+      font-weight: 100;
+    }
+  }
+
+  &__section {
+    text-align: center;
+
+    @include atTiny {
+      justify-self: center;
+    }
+  }
+}
