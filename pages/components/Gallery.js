@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { galleryData } from "./GalleryData";
+import { galleryData } from "../../helpers/GalleryData";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import { AiFillCamera } from "react-icons/ai";
 import Image from "next/image";

@@ -5,9 +5,9 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/kEVCn3eBudIlj3pdDLhz_/_buildManifest.js",
-    "static/kEVCn3eBudIlj3pdDLhz_/_ssgManifest.js",
-    "static/kEVCn3eBudIlj3pdDLhz_/_middlewareManifest.js"
+    "static/vCk_Wrqk59E0qJPK50lBi/_buildManifest.js",
+    "static/vCk_Wrqk59E0qJPK50lBi/_ssgManifest.js",
+    "static/vCk_Wrqk59E0qJPK50lBi/_middlewareManifest.js"
   ],
   "pages": {
     "/": [
@@ -18,7 +18,7 @@
       "static/chunks/d7eeaac4-7fa58fc9527ae21f.js",
       "static/chunks/1bfc9850-6988a4c603344d86.js",
       "static/chunks/675-5bb6d7cc04c309bc.js",
-      "static/chunks/pages/index-1f6361f4c47f12f4.js"
+      "static/chunks/pages/index-abc880dda0d296b3.js"
     ],
     "/_app": [
       "static/chunks/webpack-69bfa6990bb9e155.js",
@@ -67,13 +67,7 @@
       "static/chunks/d7eeaac4-7fa58fc9527ae21f.js",
       "static/chunks/1bfc9850-6988a4c603344d86.js",
       "static/chunks/675-5bb6d7cc04c309bc.js",
-      "static/chunks/pages/components/Gallery-614c6a507ff23738.js"
-    ],
-    "/components/GalleryData": [
-      "static/chunks/webpack-69bfa6990bb9e155.js",
-      "static/chunks/framework-fc97f3f1282ce3ed.js",
-      "static/chunks/main-f962425130346e35.js",
-      "static/chunks/pages/components/GalleryData-05ca6796fa02aea7.js"
+      "static/chunks/pages/components/Gallery-bf91ad258e8c5ee7.js"
     ],
     "/components/Header": [
       "static/chunks/webpack-69bfa6990bb9e155.js",
