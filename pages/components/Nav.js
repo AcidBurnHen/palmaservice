@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +20,9 @@ const Nav = () => {
     <header className="site-header">
       <div className={`wrapper site-header__wrapper ${menuOpen ? "mobile-nav" : ""}`}>
         <div className={`site-header__logo ${menuOpen ? "mobile-nav__logo" : ""}`}>
-          <Image src="https://sionaugb.sirv.com/palmaservice/logo/site-logo_medium.svg" alt="Maritime Composites Design" width="100%" height="100%" objectFit="contain" />
+          <Link href="/">
+            <Image src="https://sionaugb.sirv.com/palmaservice/logo/site-logo_medium.svg" alt="Maritime Composites Design" width="100%" height="100%" objectFit="contain" />
+          </Link>
         </div>
         <nav>
           <ul className="site-header__nav">
