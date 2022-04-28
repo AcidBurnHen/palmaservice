@@ -16,7 +16,6 @@ function Home() {
       <Header />
       <Nav />
       <Banner />
-      <About />
       <Services />
       <Gallery />
       <Contact />

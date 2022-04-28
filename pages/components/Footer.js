@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
         <div className="site-footer__section">
           <p>Contact us at:</p>
-          <p>info@palma-service.net</p>
+          <p>info@palmaservice.net</p>
         </div>
       </div>
     </footer>

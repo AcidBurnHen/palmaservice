@@ -17,7 +17,7 @@ const Services = () => {
         <div className="services__items">
           <ul>
             <li>Gel Coat Repairs</li>
-            <li>Structural Grip Repairs</li>
+            <li>Structural GRP Repairs</li>
             <li>Polishing and Refurbishing</li>
             <li>Electrical Installations and Upgrades</li>
             <li>Upholstery Repairs and Upgrades</li>

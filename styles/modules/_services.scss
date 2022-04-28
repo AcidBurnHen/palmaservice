@@ -2,6 +2,7 @@
 @import "../base/mixins";
 
 .services {
+  margin-top: -0.3rem;
   background-color: vars.$bg;
   font-family: vars.$inter;
   color: rgba(255, 255, 255, 0.9);
