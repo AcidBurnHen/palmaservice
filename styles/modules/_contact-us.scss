@@ -75,6 +75,8 @@
     }
 
     input {
+      border: none;
+      border-radius: 8px;
       padding: 0.3rem;
       margin: 0.17rem 0;
 
@@ -85,14 +87,22 @@
     }
   }
 
+  &__message {
+    border: none;
+    border-radius: 8px;
+    margin: 0.17rem 0 1rem 0;
+    padding: 0.5rem;
+    height: 5rem;
+  }
+
   &__submit {
     grid-column: 2;
     justify-self: center;
     grid-row: 5;
-    margin-top: 0.5rem;
     padding: 0.5rem 1rem;
     background-color: #fff;
     border: none;
+    border-radius: 4px;
     color: vars.$mainBlue;
     font-weight: 500;
     font-size: 1.2rem;

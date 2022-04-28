@@ -1,0 +1,27 @@
+.loader {
+  height: 234px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: loading;
+  animation-duration: 1.6s;
+  animation-direction: reverse;
+  animation-iteration-count: infinite;
+
+  @keyframes loading {
+    0% {
+      opacity: 0%;
+      margin-left: 8rem;
+    }
+    100% {
+      opacity: 100%;
+      margin-right: 8rem;
+    }
+  }
+
+  &__icon {
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+  }
+}

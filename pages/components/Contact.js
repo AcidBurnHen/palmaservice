@@ -1,5 +1,8 @@
+import next from "next";
 import { useState } from "react";
 import { AiOutlineMail } from "react-icons/ai";
+import { SiMinutemailer } from "react-icons/si";
+import { BiMailSend } from "react-icons/bi";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -7,6 +10,7 @@ const Contact = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoaded] = useState("");
 
   const handleName = e => {
     setName(e.target.value);
@@ -24,9 +28,10 @@ const Contact = () => {
     setMessage(e.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     console.log("sending");
+    setLoaded("loading");
 
     let data = {
       name,
@@ -35,21 +40,23 @@ const Contact = () => {
       message
     };
 
-    fetch("/api/contact", {
+    await fetch("/api/contact", {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json"
       },
       body: JSON.stringify(data)
-    }).then(res => {
-      if (res.status === 200) {
-        setSubmitted(true);
-        setName("");
-        setEmail("");
-        setBody("");
-      }
-    });
+    })
+      .then(res => {
+        if (res.status === 200) {
+          setSubmitted(true);
+          setLoaded("loaded");
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   return (
@@ -61,21 +68,46 @@ const Contact = () => {
         </div>
       </div>
       <div className="contact-us__form-container wrapper">
-        <form className="contact-us__form">
-          <div className="contact-us__labels">
-            <label htmlFor="name">Name</label>
-            <label htmlFor="email">Email</label>
-            <label htmlFor="subject">Subject</label>
-            <label htmlFor="message">Message</label>
+        {loading == "" ? (
+          <form className="contact-us__form">
+            <div className="contact-us__labels">
+              <label htmlFor="name">Name</label>
+              <label htmlFor="email">Email</label>
+              <label htmlFor="subject">Subject</label>
+              <label htmlFor="message">Message</label>
+            </div>
+            <div className="contact-us__inputs">
+              <input onChange={handleName} type="text" name="name" />
+              <input onChange={handleEmail} type="email" name="email" />
+              <input onChange={handleSubject} type="text" name="subject" />
+              <textarea className="contact-us__message" onChange={handleMessage} type="text" name="message" />
+            </div>
+            <input className="contact-us__submit" onClick={handleSubmit} type="submit" />
+          </form>
+        ) : (
+          ""
+        )}
+        {loading == "loading" ? (
+          <div className="loader">
+            <BiMailSend className="loader__icon" />
           </div>
-          <div className="contact-us__inputs">
-            <input onChange={handleName} type="text" name="name" />
-            <input onChange={handleEmail} type="email" name="email" />
-            <input onChange={handleSubject} type="text" name="subject" />
-            <input className="contact-us__inputs-message" onChange={handleMessage} type="text" name="message" />
+        ) : (
+          ""
+        )}
+        {loading == "loaded" ? (
+          <div className="alert">
+            <div className="alert__container">
+              <div className="alert__icon--container">
+                <SiMinutemailer className="alert__icon" />
+              </div>
+              <div className="alert__text">
+                <p>Email Sent!</p>
+              </div>
+            </div>
           </div>
-          <input className="contact-us__submit" onClick={handleSubmit} type="submit" />
-        </form>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

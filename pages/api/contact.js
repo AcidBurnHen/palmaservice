@@ -3,8 +3,8 @@ require("dotenv").config();
 
 const PASS = process.env.password;
 
-export default function emailHandler(req, res) {
-  const transporter = nodemailer.createTransport({
+export default async function emailHandler(req, res) {
+  let transporter = nodemailer.createTransport({
     port: 465,
     host: "smtp.gmail.com",
     auth: {
@@ -16,6 +16,8 @@ export default function emailHandler(req, res) {
 
   const body = req.body;
 
+  console.log(body);
+
   const mail = {
     from: body.email,
     sender: body.email,
@@ -26,13 +28,15 @@ export default function emailHandler(req, res) {
     text: body.message
   };
 
-  transporter.sendMail(mail, (err, info) => {
+  await transporter.sendMail(mail, (err, data) => {
     if (err) {
-      console.log(err);
+      res.json({
+        status: 405
+      });
     } else {
-      console.log(info);
+      res.json({
+        status: 200
+      });
     }
   });
-
-  res.status(200);
 }

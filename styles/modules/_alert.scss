@@ -1,0 +1,59 @@
+@import "../base/mixins";
+
+.alert {
+  height: 234px;
+  display: grid;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__text {
+    align-self: center;
+    font-size: 1.5rem;
+    transform: translate(-60px);
+    opacity: 1;
+    animation-name: slide;
+    animation-duration: 2.3s;
+
+    @keyframes slide {
+      0% {
+        opacity: 0;
+        transform: translate(0);
+        font-size: 1rem;
+      }
+      100% {
+        transform: translate(0);
+        font-size: 1.5rem;
+        transform: translate(-60px);
+      }
+    }
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    animation-name: fly;
+    animation-duration: 1.5s;
+    transform: translate(300px, -100px);
+    opacity: 0;
+
+    @keyframes fly {
+      0% {
+        opacity: 1;
+        transform: translate(0);
+      }
+      100% {
+        transform: translate(300px, -100px);
+        opacity: 0;
+      }
+    }
+
+    &--container {
+      justify-self: end;
+      align-self: center;
+      margin-right: 60px;
+    }
+  }
+}

@@ -1,6 +1,8 @@
 @use "./base/global";
 
 @use "./modules/wrapper";
+@use "./modules/loader";
+@use "./modules/alert";
 @use "./modules/site-header";
 @use "./modules/mobile-nav";
 @use "./modules/banner";
