@@ -7,5 +7,5 @@ module.exports = {
   },
   images: {
     domains: ["sionaugb.sirv.com"]
-  }
+  },
 };
