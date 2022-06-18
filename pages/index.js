@@ -7,8 +7,8 @@ import Nav from "@/components/Nav";
 import Banner from "@/components/Banner";
 import About from "@/components/About";
 import Services from "@/components/Services";
-import Gallery from "@/components/Gallery";
-import Contact from "@/components/Contact";
+import Gallery from "@/components/gallery/Gallery";
+import Contact from "@/components/contact/Contact";
 
 function Home() {
   return (
