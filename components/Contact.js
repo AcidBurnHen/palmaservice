@@ -9,7 +9,6 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoaded] = useState('');
 
   let errorMessages = {};
@@ -91,20 +90,20 @@ const Contact = () => {
             data.password !== '' &&
             data.message !== ''
           ) {
-            setSubmitted(true);
             setLoaded('loaded');
           } else {
-            setSubmitted(false);
             setLoaded('');
             res.end();
           }
-        } else {
-          setSubmitted(false);
+        }
+
+        if (res.status === 550) {
           setLoaded('');
           res.end();
         }
       })
       .catch((error) => {
+        setLoaded('')
         console.log(error);
       });
   };
@@ -116,9 +115,6 @@ const Contact = () => {
 
     return 'error-message__show';
   }
-
-  console.log(error);
-  console.log(error.nameErr);
 
   return (
     <div id='contact' className='contact-us'>

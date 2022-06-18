@@ -9,8 +9,7 @@ const ErrorMessage = ({ msg, show }) => {
   };
 
   return (
-    <div
-      className={`error-message ${show}`}>
+    <div className={`error-message ${show}`}>
       <div
         className={`error-message__container ${
           hideAlert ? 'error-message__hide' : ''
