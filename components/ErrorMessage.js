@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const ErrorMessage = ({ msg, show }) => {
+const ErrorMessage = ({ msg, show, textarea }) => {
   const [hideAlert, setHideAlert] = useState(false);
 
   const closeAlert = (e) => {
@@ -13,7 +13,7 @@ const ErrorMessage = ({ msg, show }) => {
       <div
         className={`error-message__container ${
           hideAlert ? 'error-message__hide' : ''
-        }`}>
+        } ${textarea === undefined ? "" : textarea}`}>
         <p className='error-message__msg'>{msg}</p>
         <button onClick={closeAlert} className='error-message__btn'>
           x

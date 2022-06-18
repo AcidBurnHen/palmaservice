@@ -72,6 +72,8 @@ const Contact = () => {
       message,
     };
 
+    checkIfErrors(data);
+
     await fetch('/api/contact', {
       method: 'POST',
       headers: {
@@ -81,32 +83,21 @@ const Contact = () => {
       body: JSON.stringify(data),
     })
       .then((res) => {
+        console.log(res);
         if (res.status === 200) {
-          checkIfErrors(data);
-
-          if (
-            data.name !== '' &&
-            data.email !== '' &&
-            data.password !== '' &&
-            data.message !== ''
-          ) {
-            setLoaded('loaded');
-          } else {
-            setLoaded('');
-            res.end();
-          }
+          setLoaded('loaded');
         }
 
-        if (res.status === 550) {
+        if (res.status === 406 || res.status === 405) {
           setLoaded('');
-          res.end();
         }
       })
       .catch((error) => {
-        setLoaded('')
+        setLoaded('');
         console.log(error);
       });
   };
+
 
   function checkErrorMsg(errorMsg) {
     if (errorMsg === undefined) {
@@ -152,6 +143,7 @@ const Contact = () => {
               <ErrorMessage
                 msg={error.msgErr}
                 show={checkErrorMsg(error.msgErr)}
+                textarea="error-message__textarea"
               />
               <textarea
                 className='contact-us__message'

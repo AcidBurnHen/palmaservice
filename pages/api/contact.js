@@ -10,12 +10,10 @@ export default async function emailHandler(req, res) {
     },
     secure: true,
     debug: true,
-    logger: true
+    logger: true,
   });
 
   const body = req.body;
-
-  console.log(body);
 
   const mail = {
     from: body.email,
@@ -27,15 +25,37 @@ export default async function emailHandler(req, res) {
     text: body.message,
   };
 
-  await transporter.sendMail(mail, (err, data) => {
-    if (err) {
-      res.json({
-        status: 405,
-      });
-    } else {
-      res.json({
-        status: 200,
-      });
-    }
-  });
+  let bodyFieldsCheck
+
+  if (
+    body.email === '' ||
+    body.name === '' ||
+    body.subject === '' ||
+    body.message === ''
+  ) {
+    res.status(406)
+    res.json({status: 406})
+    transporter.close()
+    bodyFieldsCheck = false;
+  } else {
+    bodyFieldsCheck = true;
+  }
+
+  if (bodyFieldsCheck) {
+    await transporter.sendMail(mail, (err, data) => {
+      console.log(data.envelope);
+  
+      if (err) {
+        res.json({
+          status: 405,
+        });
+      } else {
+        res.json({
+          status: 200,
+        });
+      }
+    });
+  }
+
+ 
 }
