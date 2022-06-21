@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { bowThruster } from "@/helpers/GalleryData";
+import {  galleryAlbums } from "@/helpers/GalleryData";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import { AiFillCamera } from "react-icons/ai";
 import AlbumSelector from "./AlbumSelector"
@@ -7,7 +7,8 @@ import Image from "next/image";
 
 const Gallery = () => {
   const [current, setCurrent] = useState(0);
-  const boat = bowThruster
+  const [album, setAlbum] = useState(galleryAlbums[0]);
+  const boat = album.boatImgs
   const length = boat.length;
 
   const nextImg = () => {
@@ -26,6 +27,7 @@ const Gallery = () => {
           <h2>Gallery</h2>
         </div>
       </div>
+      <AlbumSelector setAlbum={setAlbum}/>
       <section className="gallery-section__slider">
         <FaArrowAltCircleLeft className="gallery-section__left-arrow" onClick={prevImg} />
         <FaArrowAltCircleRight className="gallery-section__right-arrow" onClick={nextImg} />
