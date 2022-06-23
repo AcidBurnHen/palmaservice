@@ -87,7 +87,19 @@
     opacity: 0;
     align-self: center;
     max-width: 30rem;
-    max-height: 20rem;
+    max-height: 9.5rem;
+
+    @include atTinyer {
+      max-height: 14rem;
+    }
+
+    @include atTiny {
+      max-height: 16rem;
+    }
+
+    @include atSmaller {
+      max-height: 20rem;
+    }
 
     @include atMedium {
       grid-column: 3 / span 4;
