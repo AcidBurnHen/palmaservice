@@ -27,9 +27,10 @@
   }
 
   &__slider {
-    padding: 1rem 0 3.5rem 0;
+    padding: 3.5rem 0 3.5rem 0;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     height: 9.8rem;
 
     @include atTinyer {
@@ -41,7 +42,7 @@
     }
 
     @include atSmaller {
-      height: 21.3rem;
+      height: 22.3rem;
     }
 
     @include atMedium {
@@ -56,7 +57,7 @@
   &__left-arrow {
     height: 25px;
     width: 25px;
-    grid-row: 1;
+    grid-row: 2;
     grid-column: 1;
     align-self: center;
     justify-self: start;
@@ -81,11 +82,12 @@
   }
 
   &__slide {
-    grid-row: 1;
+    grid-row: 1 / span 3;
     grid-column: 2 / span 4;
     opacity: 0;
     align-self: center;
     max-width: 30rem;
+    max-height: 20rem;
 
     @include atMedium {
       grid-column: 3 / span 4;
@@ -106,7 +108,7 @@
     height: 25px;
     width: 25px;
     grid-column: 6;
-    grid-row: 1;
+    grid-row: 2;
     align-self: center;
     justify-self: end;
 
