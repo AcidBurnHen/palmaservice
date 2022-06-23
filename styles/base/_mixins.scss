@@ -1,3 +1,9 @@
+@mixin atTinyer {
+  @media (min-width: 340px) {
+    @content;
+  }
+}
+
 @mixin atTiny {
   @media (min-width: 530px) {
     @content;

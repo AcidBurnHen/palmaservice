@@ -20,8 +20,8 @@ const AlbumSelector = ({ setAlbum }) => {
           className='album-selector__image'
           src={img.src}
           alt={img.alt}
-          height={50}
-          width={70}
+          height={80}
+          width={100}
           objectFit='contain'
         />
       </div>

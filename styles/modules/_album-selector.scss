@@ -4,25 +4,76 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-bottom: 20px;
-  width: 60%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 
+  @include atTiny {
+    width: 90%;
+  }
+
+  @include atMedium {
+    width: 70%;
+  }
+
+  @include atLarge {
+    width: 60%;
+  }
+
   &__container {
-   
     display: grid;
     justify-self: center;
-    grid-template-rows: 2;
+    column-gap: 12px;
+
+    @include atMedium {
+      column-gap: 0;
+    }
 
     &:hover {
       transition: all 0.3s ease-in;
       transform: scale(1.05);
     }
+
+    & span {
+      height: 40px !important;
+
+      @include atTinyer {
+        height: 50px !important;
+      }
+
+      @include atTiny {
+        height: 60px !important;
+      }
+
+      @include atMedium {
+        height: 70px !important;
+      }
+
+      @include atLarge {
+        height: initial !important;
+      }
+    }
   }
 
   &__title {
-    font-size: 0.6rem;
+    font-size: 0.40rem;
     text-align: center;
+
+    @include atTinyer {
+      font-size: 0.55rem;
+    }
+
+    @include atTiny {
+      font-size: 0.7rem;
+    }
+
+    @include atMedium {
+      font-size: 0.8rem;
+    }
+
+    @include atLarge {
+      font-size: 0.9rem;
+    }
   }
 
   &__img {
