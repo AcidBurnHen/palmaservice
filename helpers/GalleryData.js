@@ -454,15 +454,15 @@ export const galleryAlbums = [
     boatImgs: bowThruster,
   },
   {
-    boatName: 'Peter Pan',
+    boatName: 'Structural GRP Repair',
     boatImgs: peterPan,
   },
   {
-    boatName: `Mondial 54'`,
+    boatName: `Open Mold Build`,
     boatImgs: mondial54,
   },
   {
-    boatName: 'Lala Bassa',
+    boatName: 'Antislip Repair',
     boatImgs: lalaBassa,
   },
   {
