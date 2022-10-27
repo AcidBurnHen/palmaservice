@@ -20,7 +20,7 @@ const Nav = () => {
     <header className="site-header">
       <div className={`wrapper site-header__wrapper ${menuOpen ? "mobile-nav" : ""}`}>
         <div className={`site-header__logo ${menuOpen ? "mobile-nav__logo" : ""}`}>
-          <Link href="/">
+          <Link href="/" passHref>
             <Image src="https://sionaugb.sirv.com/palmaservice/logo/site-logo_medium.svg" alt="Maritime Composites Design" width="100%" height="100%" objectFit="contain" />
           </Link>
         </div>
